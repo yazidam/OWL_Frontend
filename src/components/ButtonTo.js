@@ -7,7 +7,11 @@ const ButtonTo = ({ FunctionName, text }) => {
         type="primary"
         onClick={FunctionName}
         ghost
-        style={{ backgroundColor: "#F9F3DF", color: "black" }}
+        style={{
+          backgroundColor: "#C1FFD7",
+          color: "black",
+          borderRadius: "10px",
+        }}
       >
         {text}
       </Button>
