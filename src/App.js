@@ -2,10 +2,20 @@ import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Travaillesous from "./Screens/Travaillesous";
 import Home from "./Screens/Home";
+import Travaillesouslememedepartement from "./Screens/Travaillesouslememedepartement";
+import Travailledanslamemeequipe from "./Screens/Travailledanslamemeequipe";
 
 function App() {
   return (
     <Router>
+      <Route
+        path="/travailledanslamemeequipe"
+        component={Travailledanslamemeequipe}
+      />
+      <Route
+        path="/travaillesouslememedepartement"
+        component={Travaillesouslememedepartement}
+      />
       <Route path="/travaillesous" component={Travaillesous} />
       <Route path="/" exact component={Home} />
     </Router>

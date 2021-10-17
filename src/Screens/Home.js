@@ -7,6 +7,15 @@ const Home = ({ history }) => {
   const Totravaillesous = () => {
     history.push("/travaillesous");
   };
+
+  const Travaillesouslememedepartement = () => {
+    history.push("/travaillesouslememedepartement");
+  };
+
+  const Travailledanslamemeequipe = () => {
+    history.push("/travailledanslamemeequipe");
+  };
+
   return (
     <>
       <div
@@ -27,11 +36,11 @@ const Home = ({ history }) => {
             text="Filttre To travaille sous"
           />
           <ButtonTo
-            FunctionName={Totravaillesous}
+            FunctionName={Travailledanslamemeequipe}
             text="Filttre To travaille dans la meme equipe"
           />
           <ButtonTo
-            FunctionName={Totravaillesous}
+            FunctionName={Travaillesouslememedepartement}
             text="Filttre travaille sous le meme departement"
           />
         </div>

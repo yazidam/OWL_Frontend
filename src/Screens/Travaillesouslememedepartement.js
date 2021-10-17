@@ -3,7 +3,7 @@ import entro from "../images/entro.jpg";
 import { Select } from "antd";
 import { Button } from "antd";
 const { Option } = Select;
-const Travaillesous = () => {
+const Travaillesouslememedepartement = () => {
   const [size, setSize] = useState("default");
 
   const children = [];
@@ -26,15 +26,15 @@ const Travaillesous = () => {
       <div
         style={{
           // backgroundImage: `url(${entro})`,
-          backgroundColor: "#FCFFA6",
+          backgroundColor: "#C1FFD7",
           width: "100%",
           opacity: 0.7,
           height: "625px",
           position: "absolute",
         }}
       >
-        <h1 className="App" style={{ color: "#FFFF" }}>
-          Travaille Sous
+        <h1 className="App" style={{ color: "#FEFBF3" }}>
+          Travaille Sous Le Meme Departement
         </h1>
 
         <Select
@@ -67,4 +67,4 @@ const Travaillesous = () => {
   );
 };
 
-export default Travaillesous;
+export default Travaillesouslememedepartement;
