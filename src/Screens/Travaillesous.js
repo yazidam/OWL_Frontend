@@ -3,7 +3,7 @@ import entro from "../images/entro.jpg";
 import { Select } from "antd";
 import { Button } from "antd";
 const { Option } = Select;
-const MainPage = () => {
+const Travaillesous = () => {
   const [size, setSize] = useState("default");
 
   const children = [];
@@ -27,6 +27,7 @@ const MainPage = () => {
         style={{
           backgroundImage: `url(${entro})`,
           width: "100%",
+          opacity: 0.7,
           height: "625px",
           position: "absolute",
         }}
@@ -52,7 +53,11 @@ const MainPage = () => {
         </Select>
         {/* <br /> */}
         <div className="App">
-          <Button type="primary" ghost style={{ backgroundColor: "#F9F3DF" }}>
+          <Button
+            type="primary"
+            ghost
+            style={{ backgroundColor: "#F9F3DF", color: "black" }}
+          >
             Primary
           </Button>
         </div>
@@ -61,4 +66,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default Travaillesous;
