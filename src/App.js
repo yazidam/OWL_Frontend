@@ -1,10 +1,10 @@
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import mainPage from "./Screens/mainPage";
+import MainPage from "./Screens/MainPage";
 function App() {
   return (
     <Router>
-      <Route path="/" component={mainPage} />
+      <Route path="/" component={MainPage} />
     </Router>
   );
 }
