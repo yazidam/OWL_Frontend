@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import entro from "../images/entro.jpg";
 import { Select } from "antd";
+import memeequipe from "../images/memeequipe.jpg";
 import { Button } from "antd";
 const { Option } = Select;
 const Travailledanslamemeequipe = () => {
@@ -25,8 +26,8 @@ const Travailledanslamemeequipe = () => {
     <>
       <div
         style={{
-          // backgroundImage: `url(${entro})`,
-          backgroundColor: "#CAB8FF",
+          backgroundImage: `url(${memeequipe})`,
+          // backgroundColor: "#CAB8FF",
           width: "100%",
           opacity: 0.7,
           height: "625px",

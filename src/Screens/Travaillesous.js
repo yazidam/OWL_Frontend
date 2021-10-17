@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import entro from "../images/entro.jpg";
+import travaillesous from "../images/travailsous.jpg";
 import { Select } from "antd";
 import { Button } from "antd";
 const { Option } = Select;
@@ -25,8 +25,8 @@ const Travaillesous = () => {
     <>
       <div
         style={{
-          // backgroundImage: `url(${entro})`,
-          backgroundColor: "#FCFFA6",
+          backgroundImage: `url(${travaillesous})`,
+          // backgroundColor: "#FCFFA6",
           width: "100%",
           opacity: 0.7,
           height: "625px",
