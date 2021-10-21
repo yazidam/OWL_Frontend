@@ -1,25 +1,67 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import travailavec from "../images/travailavec.jpg";
 import { Select } from "antd";
 import { Button } from "antd";
+
+import { Table } from "react-bootstrap";
+import axios from "axios";
 const { Option } = Select;
 const Travaillesouslememedepartement = () => {
-  const [size, setSize] = useState("default");
+  const [listproduction, setListproduction] = useState([]);
+  const [listrh, setListrh] = useState([]);
+  const [listfinaciee, setListfinaciee] = useState([]);
 
-  const children = [];
-  for (let i = 10; i < 36; i++) {
-    children.push(
-      <Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>
-    );
-  }
+  useEffect(async () => {
+    await axios
+      .get(
+        "http://localhost:3030/EntrepriseProject/sparql?query=PREFIX+ns%3A%3Chttp%3A%2F%2Fwww.semanticweb.org%2Fyosra%2Fontologies%2F2021%2F9%2Funtitled-ontology-6%23%3E%0APREFIX+rdf%3A%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0A%0A%0A%0ASELECT+++%3Fnom+%3Fcin+%3Ffonction%0Awhere+%7B%0A%3Fpersonne+rdf%3Atype+ns%3ADirecteur_de_production+.%0A%3Fpersonne+ns%3Atravaillesouslememedepartement+%3Fcollegue+.%0A%3Fcollegue+ns%3ANOM-Complet+%3Fnom+.%0A%3Fcollegue+ns%3ACIN+%3Fcin+.%0A%3Fcollegue+ns%3AFonction+%3Ffonction+.%0A%0A%7D%09&output=json"
+      )
+      .then((res) => {
+        // console.log("11", res.data.results.bindings);
 
-  function handleChange(value) {
-    console.log(`Selected: ${value}`);
-  }
+        setListproduction(res.data.results.bindings);
+        // console.log("object", listproduction);
+      });
 
-  const handleSizeChange = (e) => {
-    setSize(e.target.value);
-  };
+    await axios
+      .get(
+        "http://localhost:3030/EntrepriseProject/sparql?query=PREFIX+ns%3A%3Chttp%3A%2F%2Fwww.semanticweb.org%2Fyosra%2Fontologies%2F2021%2F9%2Funtitled-ontology-6%23%3E%0APREFIX+rdf%3A%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0A%0A%0A%0ASELECT+++%3Fnom+%3Fcin+%3Ffonction%0Awhere+%7B%0A%3Fpersonne+rdf%3Atype+ns%3ADirecteur_RH+.%0A%0A%3Fpersonne+ns%3Atravaillesouslememedepartement+%3Fcollegue+.%0A%3Fcollegue+ns%3ANOM-Complet+%3Fnom+.%0A%3Fcollegue+ns%3ACIN+%3Fcin+.%0A%3Fcollegue+ns%3AFonction+%3Ffonction+.%0A%0A%7D%09&output=json"
+      )
+      .then((res) => {
+        // console.log("11", res.data.results.bindings);
+
+        setListrh(res.data.results.bindings);
+        // console.log("object", setListrh);
+      });
+
+    await axios
+      .get(
+        "http://localhost:3030/EntrepriseProject/sparql?query=PREFIX+ns%3A%3Chttp%3A%2F%2Fwww.semanticweb.org%2Fyosra%2Fontologies%2F2021%2F9%2Funtitled-ontology-6%23%3E%0APREFIX+rdf%3A%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0A%0A%0A%0ASELECT+++%3Fnom+%3Fcin+%3Ffonction%0Awhere+%7B%0A%3Fpersonne+rdf%3Atype+ns%3ADirecteur_financier+.%0A%0A%3Fpersonne+ns%3Atravaillesouslememedepartement+%3Fcollegue+.%0A%3Fcollegue+ns%3ANOM-Complet+%3Fnom+.%0A%3Fcollegue+ns%3ACIN+%3Fcin+.%0A%3Fcollegue+ns%3AFonction+%3Ffonction+.%0A%0A%7D%09&output=json"
+      )
+      .then((res) => {
+        // console.log("11", res.data.results.bindings);
+
+        setListfinaciee(res.data.results.bindings);
+        // console.log("object", listfinaciee);
+      });
+  }, []);
+
+  // const [size, setSize] = useState("default");
+
+  // const children = [];
+  // for (let i = 10; i < 36; i++) {
+  //   children.push(
+  //     <Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>
+  //   );
+  // }
+
+  // function handleChange(value) {
+  //   console.log(`Selected: ${value}`);
+  // }
+
+  // const handleSizeChange = (e) => {
+  //   setSize(e.target.value);
+  // };
 
   return (
     <>
@@ -33,35 +75,68 @@ const Travaillesouslememedepartement = () => {
           position: "absolute",
         }}
       >
-        <h1 className="App" style={{ color: "#FEFBF3" }}>
-          Travaille Sous Le Meme Departement
-        </h1>
+        <h1>Production</h1>
+        <Table striped hover responsive className="table-sm">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>CIN</th>
+              <th>FUNCTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            {listproduction?.map((x) => (
+              <tr key={x.cin.value}>
+                <td>{x.nom.value}</td>
+                <td>{x.cin.value}</td>
 
-        <Select
-          className="App"
-          mode="multiple"
-          size={size}
-          placeholder="Please select"
-          // defaultValue={["a10", "c12"]}
-          onChange={handleChange}
-          style={{
-            width: "50%",
+                <td>{x.fonction.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
 
-            margin: "100px 290px",
-          }}
-        >
-          {children}
-        </Select>
-        {/* <br /> */}
-        <div className="App">
-          <Button
-            type="primary"
-            ghost
-            style={{ backgroundColor: "#F9F3DF", color: "black" }}
-          >
-            Primary
-          </Button>
-        </div>
+        <h1>RH</h1>
+        <Table striped hover responsive className="table-sm">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>cin</th>
+              <th>FUNCTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            {listrh?.map((x) => (
+              <tr key={x.cin.value}>
+                <td>{x.nom.value}</td>
+                <td>{x.cin.value}</td>
+
+                <td>{x.fonction.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+
+        <h1>Finance</h1>
+        <Table striped hover responsive className="table-sm">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>CIN</th>
+              <th>FUNCTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            {listfinaciee?.map((x) => (
+              <tr key={x.cin.value}>
+                <td>{x.nom.value}</td>
+                <td>{x.cin.value}</td>
+
+                <td>{x.fonction.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
       </div>
     </>
   );

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Button, Table } from "react-bootstrap";
 const Listemployee = () => {
-  const [listingenieur, setListingenieur] = useState(null);
+  const [listingenieur, setListingenieur] = useState([]);
   const [listtechnicien, setListtechnicien] = useState([]);
   const [listcomptable, setListcomptable] = useState([]);
   const [listdirecteur, setListdirecteur] = useState([]);
@@ -86,6 +86,28 @@ const Listemployee = () => {
           ))}
         </tbody>
       </Table>
+
+      <h1> responsable</h1>
+
+      <Table striped hover responsive className="table-sm">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>CIN</th>
+            <th>FUNCTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          {listresponsable?.map((x) => (
+            <tr key={x.CIN.value}>
+              <td>{x.nom.value}</td>
+              <td>{x.CIN.value}</td>
+
+              <td>{x.Fonction.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
       <h1>Ingenieurrrr</h1>
 
       <Table striped hover responsive className="table-sm">
@@ -142,28 +164,6 @@ const Listemployee = () => {
         </thead>
         <tbody>
           {listtechnicien?.map((x) => (
-            <tr key={x.CIN.value}>
-              <td>{x.nom.value}</td>
-              <td>{x.CIN.value}</td>
-
-              <td>{x.Fonction.value}</td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-
-      <h1> responsable</h1>
-
-      <Table striped hover responsive className="table-sm">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>CIN</th>
-            <th>FUNCTION</th>
-          </tr>
-        </thead>
-        <tbody>
-          {listresponsable?.map((x) => (
             <tr key={x.CIN.value}>
               <td>{x.nom.value}</td>
               <td>{x.CIN.value}</td>
