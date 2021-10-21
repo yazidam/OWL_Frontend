@@ -115,7 +115,7 @@ const Travailledanslamemeequipe = () => {
         {/* {children} */}
         {/* </Select> */}
         {/* <br /> */}
-        <div className="App">
+        <div className="">
           {/* <Button
             type="submit"
             ghost
@@ -125,7 +125,7 @@ const Travailledanslamemeequipe = () => {
             Primary
           </Button> */}
 
-          <div className="App container">
+          <div className="container">
             <DropdownButton
               alignRight
               title="Dropdown right"

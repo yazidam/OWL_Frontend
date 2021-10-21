@@ -56,10 +56,9 @@ const Home = ({ history }) => {
           height: "625px",
           position: "absolute",
         }}
+        className="App"
       >
-        <h1 className="App" style={{ color: "#FEFBF3" }}>
-          Entreprise Hiérarchie
-        </h1>
+        {/* <h1 className="App">Entreprise Hiérarchie00000000</h1> */}
 
         {pdg.map((x, y) => (
           <>
@@ -68,7 +67,7 @@ const Home = ({ history }) => {
           </>
         ))}
         <div className="home">
-          <ButtonTo
+          {/* <ButtonTo
             FunctionName={Totravaillesous}
             text="Filtre travaille sous"
           />
@@ -84,7 +83,7 @@ const Home = ({ history }) => {
           <ButtonTo
             FunctionName={Listemployee}
             text="List employees selon fonction"
-          />
+          /> */}
         </div>
       </div>
     </>

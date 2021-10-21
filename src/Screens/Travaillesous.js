@@ -54,10 +54,10 @@ const Travaillesous = () => {
           position: "absolute",
         }}
       >
-        <h1 className="App" style={{ color: "#FFFF" }}>
+        <h1 className="" style={{ color: "#FFFF" }}>
           Travaille Sous
         </h1>
-        <div className="App">
+        <div className="">
           {/* <Button
             type="submit"
             ghost
@@ -67,7 +67,7 @@ const Travaillesous = () => {
             Primary
           </Button> */}
 
-          <div className="App container">
+          <div className=" container">
             <DropdownButton
               alignRight
               title="Dropdown right"

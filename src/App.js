@@ -5,10 +5,13 @@ import Home from "./Screens/Home";
 import Travaillesouslememedepartement from "./Screens/Travaillesouslememedepartement";
 import Travailledanslamemeequipe from "./Screens/Travailledanslamemeequipe";
 import Listemployee from "./Screens/Listemployee";
+import Header from "./components/Header";
 
 function App() {
   return (
     <Router>
+      <Header />
+
       <Route path="/listemployee" component={Listemployee} />
       <Route
         path="/travailledanslamemeequipe"
