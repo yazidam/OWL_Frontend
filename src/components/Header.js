@@ -12,15 +12,9 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="collapse navbar-collapse justify-content-end">
-              <LinkContainer to="/travaillesous">
+              <LinkContainer to="/listemployee">
                 <Nav.Link>
-                  <i className="fas fa-shopping-cart"></i>Directeur
-                </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/travailledanslamemeequipe">
-                <Nav.Link>
-                  <i className="fas fa-user"></i>
-                  Equipe
+                  <i className="fas fa-user"></i> List employees
                 </Nav.Link>
               </LinkContainer>
 
@@ -31,9 +25,16 @@ const Header = () => {
                 </Nav.Link>
               </LinkContainer>
 
-              <LinkContainer to="/listemployee">
+              <LinkContainer to="/travaillesous">
                 <Nav.Link>
-                  <i className="fas fa-user"></i> List employees
+                  <i className="fas fa-shopping-cart"></i>Directeur
+                </Nav.Link>
+              </LinkContainer>
+
+              <LinkContainer to="/travailledanslamemeequipe">
+                <Nav.Link>
+                  <i className="fas fa-user"></i>
+                  Equipe
                 </Nav.Link>
               </LinkContainer>
             </Nav>
