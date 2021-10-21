@@ -80,7 +80,7 @@ const Travailledanslamemeequipe = () => {
     <>
       <div
         style={{
-          backgroundImage: `url(${memeequipe})`,
+          // backgroundImage: `url(${memeequipe})`,
           // backgroundColor: "#CAB8FF",
           width: "100%",
           opacity: 0.7,

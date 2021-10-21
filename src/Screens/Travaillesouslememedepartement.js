@@ -83,7 +83,7 @@ const Travaillesouslememedepartement = () => {
             textAlign: "center",
           }}
         >
-          <marquee scrollamount="6">
+          <marquee scrollamount="15">
             <div
               style={{
                 color: "black",
@@ -133,7 +133,7 @@ const Travaillesouslememedepartement = () => {
             textAlign: "center",
           }}
         >
-          <marquee scrollamount="6">
+          <marquee scrollamount="15">
             <div
               style={{
                 color: "black",
@@ -176,7 +176,7 @@ const Travaillesouslememedepartement = () => {
             textAlign: "center",
           }}
         >
-          <marquee scrollamount="6">
+          <marquee scrollamount="15">
             <div
               style={{
                 color: "black",

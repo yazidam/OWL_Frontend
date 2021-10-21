@@ -50,7 +50,7 @@ const Home = ({ history }) => {
     <>
       <div
         style={{
-          backgroundImage: `url(${entro})`,
+          // backgroundImage: `url(${entro})`,
           width: "100%",
           opacity: 0.7,
           height: "625px",

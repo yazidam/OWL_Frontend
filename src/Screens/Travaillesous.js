@@ -25,7 +25,7 @@ const Travaillesous = () => {
     <>
       <div
         style={{
-          backgroundImage: `url(${travaillesous})`,
+          // backgroundImage: `url(${travaillesous})`,
           // backgroundColor: "#FCFFA6",
           width: "100%",
           opacity: 0.7,
