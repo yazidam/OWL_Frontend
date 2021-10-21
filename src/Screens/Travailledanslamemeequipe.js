@@ -6,10 +6,31 @@ import { Button } from "antd";
 import { useFormik } from "formik";
 import ComboBox from "react-responsive-combo-box";
 import * as Yup from "yup";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import Dropdown from "react-bootstrap/Dropdown";
+import axios from "axios";
 const { Option } = Select;
 const Travailledanslamemeequipe = () => {
-  const [selected, setSelected] = useState("");
+  // const [selected, setSelected] = useState("");
 
+  const [value, setValue] = useState("");
+
+  const [yosra, setYosra] = useState([]);
+
+  const handleSelect = (e) => {
+    console.log(e);
+    setValue(e);
+    // console.log("res", e);
+
+    axios
+      .get(
+        `http://localhost:3030/EntrepriseProject/sparql?query=PREFIX+ns%3A%3Chttp%3A%2F%2Fwww.semanticweb.org%2Fyosra%2Fontologies%2F2021%2F9%2Funtitled-ontology-6%23%3E%0APREFIX+rdf%3A%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0A%0A%0A%0ASELECT+++%3Fnom+%3Fcin+%3Ffonction+%0Awhere+%7B%0A%3Fpersonne+ns%3ANOM-Complet+%3FNOMComplet+.%0AFILTER+(%3FNOMComplet%3D+%22${e}%22)+.%0A%0A%3Fpersonne+ns%3Atravailledanslamemeequipe+%3Fcollegue+.%0A%3Fcollegue+ns%3ANOM-Complet+%3Fnom+.%0A%3Fcollegue+ns%3ACIN+%3Fcin+.%0A%3Fcollegue+ns%3AFonction+%3Ffonction+.%0A%0A%7D%09`
+      )
+      .then((res) => {
+        setYosra(res.data.results.bindings);
+        console.log("res", res.data);
+      });
+  };
   // const children = [];
   // {
   //   children.push(
@@ -24,36 +45,36 @@ const Travailledanslamemeequipe = () => {
   //   );
   // }
 
-  function handleChange(value) {
-    console.log(`Selected: ${value}`);
-  }
+  // function handleChange(value) {
+  //   console.log(`Selected: ${value}`);
+  // }
 
   // const handleSizeChange = (e) => {
   //   setSelected(e.target.value);
   // };
 
-  const formik = useFormik({
-    initialValues: {
-      selected: selected,
-      employe: [
-        "aLI kAMOUN",
-        "Khawla Gessmi",
-        "mourad tbib",
-        "Achref ayari",
-        "alya louti",
-        "Mouldi Lakhel",
-      ],
-    },
+  // const formik = useFormik({
+  //   initialValues: {
+  //     selected: selected,
+  //     employe: [
+  //       "aLI kAMOUN",
+  //       "Khawla Gessmi",
+  //       "mourad tbib",
+  //       "Achref ayari",
+  //       "alya louti",
+  //       "Mouldi Lakhel",
+  //     ],
+  //   },
 
-    validationSchema: yupSchema,
-    onSubmit: async (values) => {
-      console.log("oooooooooooooooooooooo");
-      console.log("object", selected);
-    },
-  });
-  const t = () => {
-    console.log("object");
-  };
+  //   validationSchema: yupSchema,
+  //   onSubmit: async (values) => {
+  //     console.log("oooooooooooooooooooooo");
+  //     console.log("object", selected);
+  //   },
+  // });
+  // const t = () => {
+  //   console.log("object");
+  // };
 
   return (
     <>
@@ -83,14 +104,14 @@ const Travailledanslamemeequipe = () => {
             margin: "100px 290px",
           }}
         > */}
-        <ComboBox
+        {/* <ComboBox
           options={formik.values.employe}
           name="selected"
           onChange={formik.handleChange}
           value={formik.values.selected}
           // onSelect={setSelectedlevel}
           enableAutocomplete
-        />
+        /> */}
         {/* {children} */}
         {/* </Select> */}
         {/* <br /> */}
@@ -103,9 +124,39 @@ const Travailledanslamemeequipe = () => {
           >
             Primary
           </Button> */}
-          <button type="submit" className="btn btn-info mb-1 mx-4">
+
+          <div className="App container">
+            <DropdownButton
+              alignRight
+              title="Dropdown right"
+              id="dropdown-menu-align-right"
+              onSelect={handleSelect}
+            >
+              <Dropdown.Item eventKey="aLI kAMOUN">aLI kAMOUN</Dropdown.Item>
+              <Dropdown.Item eventKey="khawla Gessmi">
+                khawla Gessmi
+              </Dropdown.Item>
+              <Dropdown.Item eventKey="mourad tbib">mourad tbib</Dropdown.Item>
+              <Dropdown.Item eventKey="achref ayari">
+                achref ayari
+              </Dropdown.Item>
+              <Dropdown.Item eventKey="alya louti">alya louti</Dropdown.Item>
+              <Dropdown.Item eventKey="mouldi Lakhel">
+                mouldi Lakhel
+              </Dropdown.Item>
+              <Dropdown.Divider />
+              {/* <Dropdown.Item eventKey="some link">some link</Dropdown.Item> */}
+            </DropdownButton>
+            <h4>You selected {value}</h4>
+          </div>
+
+          {yosra.map((x) => (
+            <h1>{x.nom.value}</h1>
+          ))}
+
+          {/* <button type="submit" className="btn btn-info mb-1 mx-4">
             okkkkkkkkkk
-          </button>
+          </button> */}
         </div>
       </div>
     </>
