@@ -125,47 +125,91 @@ const Travaillesouslememedepartement = () => {
           </Table>
         </div>
 
-        <h1>RH</h1>
-        <Table striped hover responsive className="table-sm">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>cin</th>
-              <th>FUNCTION</th>
-            </tr>
-          </thead>
-          <tbody>
-            {listrh?.map((x) => (
-              <tr key={x.cin.value}>
-                <td>{x.nom.value}</td>
-                <td>{x.cin.value}</td>
-
-                <td>{x.fonction.value}</td>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            textAlign: "center",
+          }}
+        >
+          <marquee scrollamount="6">
+            <div
+              style={{
+                color: "black",
+                fontWeight: "bold",
+                fontSize: "50px",
+                fontFamily: "inherit",
+                fontStyle: "normal",
+                // backgroundColor: "#f8f9fb",
+              }}
+            >
+              RH
+            </div>
+          </marquee>
+          <Table striped hover responsive className="table-sm">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>cin</th>
+                <th>FUNCTION</th>
               </tr>
-            ))}
-          </tbody>
-        </Table>
+            </thead>
+            <tbody>
+              {listrh?.map((x) => (
+                <tr key={x.cin.value}>
+                  <td>{x.nom.value}</td>
+                  <td>{x.cin.value}</td>
 
-        <h1>Finance</h1>
-        <Table striped hover responsive className="table-sm">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>CIN</th>
-              <th>FUNCTION</th>
-            </tr>
-          </thead>
-          <tbody>
-            {listfinaciee?.map((x) => (
-              <tr key={x.cin.value}>
-                <td>{x.nom.value}</td>
-                <td>{x.cin.value}</td>
+                  <td>{x.fonction.value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </div>
 
-                <td>{x.fonction.value}</td>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            textAlign: "center",
+          }}
+        >
+          <marquee scrollamount="6">
+            <div
+              style={{
+                color: "black",
+                fontWeight: "bold",
+                fontSize: "50px",
+                fontFamily: "inherit",
+                fontStyle: "normal",
+                // backgroundColor: "#f8f9fb",
+              }}
+            >
+              Finance
+            </div>
+          </marquee>
+          <Table striped hover responsive className="table-sm">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>CIN</th>
+                <th>FUNCTION</th>
               </tr>
-            ))}
-          </tbody>
-        </Table>
+            </thead>
+            <tbody>
+              {listfinaciee?.map((x) => (
+                <tr key={x.cin.value}>
+                  <td>{x.nom.value}</td>
+                  <td>{x.cin.value}</td>
+
+                  <td>{x.fonction.value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </div>
       </div>
     </>
   );
