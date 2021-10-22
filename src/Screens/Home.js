@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import entro from "../images/entro.jpg";
+// import entro from "../images/first.jpeg";
 import { Button } from "antd";
 import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
@@ -51,10 +51,11 @@ const Home = ({ history }) => {
       <div
         style={{
           // backgroundImage: `url(${entro})`,
-          width: "100%",
-          opacity: 0.7,
-          height: "625px",
-          position: "absolute",
+          // width: "100%",
+          backgroundSize: "cover",
+          // opacity: 0.7,
+          // height: "625px",
+          // position: "absolute",
         }}
         className="App"
       >

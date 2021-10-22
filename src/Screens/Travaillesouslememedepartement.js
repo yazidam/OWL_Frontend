@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import travailavec from "../images/travailavec.jpg";
+// import travailavec from "../images/travailavec.jpg";
 import { Select } from "antd";
-import { Button } from "antd";
 
 import { Table } from "react-bootstrap";
 import axios from "axios";

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import bg1 from "../images/bg3.jpg";
 import { Select } from "antd";
-import memeequipe from "../images/memeequipe.jpg";
+// import memeequipe from "../images/memeequipe.jpg";
 import { Button } from "antd";
 import { useFormik } from "formik";
 import ComboBox from "react-responsive-combo-box";
