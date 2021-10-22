@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import travaillesous from "../images/travailsous.jpg";
+import bg1 from "../images/bg3.jpg";
 import { Select } from "antd";
 import { Button } from "antd";
 import DropdownButton from "react-bootstrap/DropdownButton";
@@ -45,8 +45,9 @@ const Travaillesous = () => {
   return (
     <>
       <div
+        className="text-center"
         style={{
-          // backgroundImage: `url(${travaillesous})`,
+          backgroundImage: `url(${bg1})`,
           // backgroundColor: "#FCFFA6",
           width: "100%",
           opacity: 0.7,
@@ -54,9 +55,9 @@ const Travaillesous = () => {
           position: "absolute",
         }}
       >
-        <h1 className="" style={{ color: "#FFFF" }}>
+        {/* <h1 className="" style={{ color: "#FFFF" }}>
           Travaille Sous
-        </h1>
+        </h1> */}
         <div className="">
           {/* <Button
             type="submit"
@@ -67,7 +68,7 @@ const Travaillesous = () => {
             Primary
           </Button> */}
 
-          <div className=" container">
+          <div className=" container my-4">
             <DropdownButton
               alignRight
               title="Employee"

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import entro from "../images/entro.jpg";
+import bg1 from "../images/bg3.jpg";
 import { Select } from "antd";
 import memeequipe from "../images/memeequipe.jpg";
 import { Button } from "antd";
@@ -79,18 +79,23 @@ const Travailledanslamemeequipe = () => {
   return (
     <>
       <div
+        className="text-center"
         style={{
-          // backgroundImage: `url(${memeequipe})`,
+          backgroundImage: `url(${bg1})`,
+          // backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
           // backgroundColor: "#CAB8FF",
           width: "100%",
           opacity: 0.7,
+          // display: "flex",
+          // justifyContent: "center",
           height: "625px",
           position: "absolute",
         }}
       >
-        <h1 className="App" style={{ color: "#ffff" }}>
+        {/* <h1 className="App" style={{ color: "#ffff" }}>
           Travaille Dans La Meme Equipe
-        </h1>
+        </h1> */}
 
         {/* <Select
           className="App"
@@ -115,7 +120,7 @@ const Travailledanslamemeequipe = () => {
         {/* {children} */}
         {/* </Select> */}
         {/* <br /> */}
-        <div className="">
+        <div className="my-3">
           {/* <Button
             type="submit"
             ghost
@@ -125,39 +130,43 @@ const Travailledanslamemeequipe = () => {
             Primary
           </Button> */}
 
-          <div className="container">
-            <DropdownButton
-              alignRight
-              title="Employé"
-              id="dropdown-menu-align-right"
-              onSelect={handleSelect}
-            >
-              <Dropdown.Item eventKey="aLI kAMOUN">aLI kAMOUN</Dropdown.Item>
-              <Dropdown.Item eventKey="khawla Gessmi">
-                khawla Gessmi
-              </Dropdown.Item>
-              <Dropdown.Item eventKey="mourad tbib">mourad tbib</Dropdown.Item>
-              <Dropdown.Item eventKey="achref ayari">
-                achref ayari
-              </Dropdown.Item>
-              <Dropdown.Item eventKey="alya louti">alya louti</Dropdown.Item>
-              <Dropdown.Item eventKey="mouldi Lakhel">
-                mouldi Lakhel
-              </Dropdown.Item>
-              <Dropdown.Divider />
-              {/* <Dropdown.Item eventKey="some link">some link</Dropdown.Item> */}
-            </DropdownButton>
+          <div className="container my-5">
+            <div className=" my-5">
+              <DropdownButton
+                alignRight
+                title="Employé"
+                id="dropdown-menu-align-right"
+                onSelect={handleSelect}
+              >
+                <Dropdown.Item eventKey="aLI kAMOUN">aLI kAMOUN</Dropdown.Item>
+                <Dropdown.Item eventKey="khawla Gessmi">
+                  khawla Gessmi
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="mourad tbib">
+                  mourad tbib
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="achref ayari">
+                  achref ayari
+                </Dropdown.Item>
+                <Dropdown.Item eventKey="alya louti">alya louti</Dropdown.Item>
+                <Dropdown.Item eventKey="mouldi Lakhel">
+                  mouldi Lakhel
+                </Dropdown.Item>
+                <Dropdown.Divider />
+                {/* <Dropdown.Item eventKey="some link">some link</Dropdown.Item> */}
+              </DropdownButton>
+            </div>
             {value && (
               <h4>
                 Les employés qui travailent avec {value} dans la meme equipe
                 sont :
               </h4>
             )}
-          </div>
 
-          {yosra.map((x) => (
-            <h4>{x.nom.value}</h4>
-          ))}
+            {yosra.map((x) => (
+              <h4>{x.nom.value}</h4>
+            ))}
+          </div>
 
           {/* <button type="submit" className="btn btn-info mb-1 mx-4">
             okkkkkkkkkk
