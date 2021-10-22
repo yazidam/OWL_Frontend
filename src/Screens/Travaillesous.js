@@ -70,7 +70,7 @@ const Travaillesous = () => {
           <div className=" container">
             <DropdownButton
               alignRight
-              title="Dropdown right"
+              title="Employee"
               id="dropdown-menu-align-right"
               onSelect={handleSelect}
             >
@@ -137,9 +137,8 @@ const Travaillesous = () => {
               <Dropdown.Divider />
               {/* <Dropdown.Item eventKey="some link">some link</Dropdown.Item> */}
             </DropdownButton>
-            <h4 className="my-3">You selected {value}</h4>
+            {value && <h4 className="my-3">Le directeur de {value} est : </h4>}
           </div>
-
           {yosra.map((x) => (
             <h1>{x.nom.value}</h1>
           ))}
