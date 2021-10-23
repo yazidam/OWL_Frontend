@@ -67,9 +67,9 @@ const Travaillesouslememedepartement = () => {
       <div
         style={{
           // backgroundImage: `url(${travailavec})`,
-          // backgroundColor: "#C1FFD7",
+          // backgroundColor: "#F6F5F5",
           width: "100%",
-          opacity: 0.7,
+          // opacity: 0.7,
           height: "625px",
           position: "absolute",
         }}

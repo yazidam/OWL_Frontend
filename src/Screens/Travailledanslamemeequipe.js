@@ -1,18 +1,13 @@
 import React, { useState } from "react";
 import bg1 from "../images/bg3.jpg";
 import { Select } from "antd";
-// import memeequipe from "../images/memeequipe.jpg";
-import { Button } from "antd";
-import { useFormik } from "formik";
-import ComboBox from "react-responsive-combo-box";
+
 import * as Yup from "yup";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import axios from "axios";
-const { Option } = Select;
-const Travailledanslamemeequipe = () => {
-  // const [selected, setSelected] = useState("");
 
+const Travailledanslamemeequipe = () => {
   const [value, setValue] = useState("");
 
   const [yosra, setYosra] = useState([]);
@@ -20,7 +15,6 @@ const Travailledanslamemeequipe = () => {
   const handleSelect = (e) => {
     console.log(e);
     setValue(e);
-    // console.log("res", e);
 
     axios
       .get(
@@ -31,50 +25,6 @@ const Travailledanslamemeequipe = () => {
         console.log("res", res.data);
       });
   };
-  // const children = [];
-  // {
-  //   children.push(
-  //     <Option>aLI kAMOUN</Option>,
-  //     <Option>Khawla Gessmi</Option>,
-  //     <Option>mourad tbib</Option>,
-  //     <Option>Achref ayari</Option>,
-  //     <Option>alya louti</Option>,
-  //     <Option>Mouldi Lakhel</Option>
-
-  //     // <Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>
-  //   );
-  // }
-
-  // function handleChange(value) {
-  //   console.log(`Selected: ${value}`);
-  // }
-
-  // const handleSizeChange = (e) => {
-  //   setSelected(e.target.value);
-  // };
-
-  // const formik = useFormik({
-  //   initialValues: {
-  //     selected: selected,
-  //     employe: [
-  //       "aLI kAMOUN",
-  //       "Khawla Gessmi",
-  //       "mourad tbib",
-  //       "Achref ayari",
-  //       "alya louti",
-  //       "Mouldi Lakhel",
-  //     ],
-  //   },
-
-  //   validationSchema: yupSchema,
-  //   onSubmit: async (values) => {
-  //     console.log("oooooooooooooooooooooo");
-  //     console.log("object", selected);
-  //   },
-  // });
-  // const t = () => {
-  //   console.log("object");
-  // };
 
   return (
     <>
@@ -93,43 +43,7 @@ const Travailledanslamemeequipe = () => {
           position: "absolute",
         }}
       >
-        {/* <h1 className="App" style={{ color: "#ffff" }}>
-          Travaille Dans La Meme Equipe
-        </h1> */}
-
-        {/* <Select
-          className="App"
-          mode="multiple"
-          name={selected}
-          placeholder="Please select"
-          // defaultValue={["a10", "c12"]}
-          onChange={handleChange}
-          style={{
-            width: "50%",
-            margin: "100px 290px",
-          }}
-        > */}
-        {/* <ComboBox
-          options={formik.values.employe}
-          name="selected"
-          onChange={formik.handleChange}
-          value={formik.values.selected}
-          // onSelect={setSelectedlevel}
-          enableAutocomplete
-        /> */}
-        {/* {children} */}
-        {/* </Select> */}
-        {/* <br /> */}
         <div className="my-3">
-          {/* <Button
-            type="submit"
-            ghost
-            onClick={t}
-            style={{ backgroundColor: "#F9F3DF", color: "black" }}
-          >
-            Primary
-          </Button> */}
-
           <div className="container my-5">
             <div className=" my-5">
               <DropdownButton
@@ -153,7 +67,6 @@ const Travailledanslamemeequipe = () => {
                   mouldi Lakhel
                 </Dropdown.Item>
                 <Dropdown.Divider />
-                {/* <Dropdown.Item eventKey="some link">some link</Dropdown.Item> */}
               </DropdownButton>
             </div>
             {value && (
@@ -167,10 +80,6 @@ const Travailledanslamemeequipe = () => {
               <h4>{x.nom.value}</h4>
             ))}
           </div>
-
-          {/* <button type="submit" className="btn btn-info mb-1 mx-4">
-            okkkkkkkkkk
-          </button> */}
         </div>
       </div>
     </>

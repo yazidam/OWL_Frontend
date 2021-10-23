@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import bg1 from "../images/bg3.jpg";
-import { Select } from "antd";
-import { Button } from "antd";
+
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import axios from "axios";
-const { Option } = Select;
+
 const Travaillesous = () => {
   const [value, setValue] = useState("");
 
@@ -14,7 +13,6 @@ const Travaillesous = () => {
   const handleSelect = (e) => {
     console.log(e);
     setValue(e);
-    // console.log("res", e);
 
     axios
       .get(
@@ -25,22 +23,6 @@ const Travaillesous = () => {
         console.log("res", res.data);
       });
   };
-  // const [size, setSize] = useState("default");
-
-  // const children = [];
-  // for (let i = 10; i < 36; i++) {
-  //   children.push(
-  //     <Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>
-  //   );
-  // }
-
-  // function handleChange(value) {
-  //   console.log(`Selected: ${value}`);
-  // }
-
-  // const handleSizeChange = (e) => {
-  //   setSize(e.target.value);
-  // };
 
   return (
     <>
@@ -55,19 +37,7 @@ const Travaillesous = () => {
           position: "absolute",
         }}
       >
-        {/* <h1 className="" style={{ color: "#FFFF" }}>
-          Travaille Sous
-        </h1> */}
         <div className="">
-          {/* <Button
-            type="submit"
-            ghost
-            onClick={t}
-            style={{ backgroundColor: "#F9F3DF", color: "black" }}
-          >
-            Primary
-          </Button> */}
-
           <div className=" container my-4">
             <DropdownButton
               alignRight
@@ -142,17 +112,12 @@ const Travaillesous = () => {
                 </Dropdown.Item>
               </div>
               <Dropdown.Divider />
-              {/* <Dropdown.Item eventKey="some link">some link</Dropdown.Item> */}
             </DropdownButton>
             {value && <h4 className="my-3">Le directeur de {value} est : </h4>}
           </div>
           {yosra.map((x) => (
             <h1>{x.nom.value}</h1>
           ))}
-
-          {/* <button type="submit" className="btn btn-info mb-1 mx-4">
-            okkkkkkkkkk
-          </button> */}
         </div>
       </div>
     </>
