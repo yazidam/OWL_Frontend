@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-// import entro from "../images/first.jpeg";
+import bos from "../images/bos.jpeg";
 import { Button } from "antd";
 import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
@@ -48,27 +48,25 @@ const Home = ({ history }) => {
   // console.log("object", x);
   return (
     <>
-      <div
-        style={{
-          // backgroundImage: `url(${entro})`,
-          // width: "100%",
-          backgroundSize: "cover",
-          // opacity: 0.7,
-          // height: "625px",
-          // position: "absolute",
-        }}
-        className="App"
-      >
-        {/* <h1 className="App">Entreprise Hiérarchie00000000</h1> */}
+      <Row>
+        <Col md={5}>
+          <div
+            style={{
+              backgroundImage: `url(${bos})`,
+              width: "570px",
 
-        {pdg.map((x, y) => (
-          <>
-            <h1>{x.nom.value}</h1>
-            <h3>{x.Fonction.value}</h3>
-          </>
-        ))}
-        <div className="home">
-          {/* <ButtonTo
+              backgroundSize: "cover",
+
+              // opacity: 0.7,
+              height: "518px",
+              // position: "absolute",
+            }}
+            // className="App"
+          >
+            {/* <h1 className="App">Entreprise Hiérarchie00000000</h1> */}
+
+            <div>
+              {/* <ButtonTo
             FunctionName={Totravaillesous}
             text="Filtre travaille sous"
           />
@@ -85,8 +83,20 @@ const Home = ({ history }) => {
             FunctionName={Listemployee}
             text="List employees selon fonction"
           /> */}
-        </div>
-      </div>
+            </div>
+          </div>
+        </Col>
+        <Col md={7} style={{ backgroundColor: "#EAE7C6" }}>
+          <div style={{}}>
+            {pdg.map((x) => (
+              <>
+                <h1 className="text-center my-5">{x.nom.value}</h1>
+                <h3 className="text-center ">{x.Fonction.value}</h3>
+              </>
+            ))}
+          </div>
+        </Col>
+      </Row>
     </>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Button, Table } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 const Listemployee = () => {
   const [listingenieur, setListingenieur] = useState([]);
   const [listtechnicien, setListtechnicien] = useState([]);
@@ -66,7 +66,7 @@ const Listemployee = () => {
 
   return (
     <>
-      <h1>directeurrrr</h1>
+      <h1 className="text-center">directeur</h1>
       <Table striped hover responsive className="table-sm">
         <thead>
           <tr>
@@ -87,7 +87,7 @@ const Listemployee = () => {
         </tbody>
       </Table>
 
-      <h1> responsable</h1>
+      <h1 className="text-center">responsable</h1>
 
       <Table striped hover responsive className="table-sm">
         <thead>
@@ -108,7 +108,7 @@ const Listemployee = () => {
           ))}
         </tbody>
       </Table>
-      <h1>Ingenieurrrr</h1>
+      <h1 className="text-center">Ingenieur</h1>
 
       <Table striped hover responsive className="table-sm">
         <thead>
@@ -130,7 +130,7 @@ const Listemployee = () => {
         </tbody>
       </Table>
 
-      <h1>Comptable</h1>
+      <h1 className="text-center">Comptable</h1>
 
       <Table striped hover responsive className="table-sm">
         <thead>
@@ -152,7 +152,7 @@ const Listemployee = () => {
         </tbody>
       </Table>
 
-      <h1> technicien</h1>
+      <h1 className="text-center"> technicien</h1>
 
       <Table striped hover responsive className="table-sm">
         <thead>
