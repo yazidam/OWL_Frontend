@@ -32,16 +32,18 @@ const Travaillesous = () => {
           backgroundImage: `url(${bg1})`,
           // backgroundColor: "#FCFFA6",
           width: "100%",
+          backgroundSize: "cover",
+
           opacity: 0.7,
           height: "625px",
           position: "absolute",
         }}
       >
-        <div className="">
-          <div className=" container my-4">
+        <div className="my-3">
+          <div className=" container my-5">
             <DropdownButton
               alignRight
-              title="Employee"
+              title="Employé"
               id="dropdown-menu-align-right"
               onSelect={handleSelect}
             >
